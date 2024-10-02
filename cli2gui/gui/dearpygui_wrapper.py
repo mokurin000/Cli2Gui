@@ -60,7 +60,7 @@ class DearPyGuiWrapper(AbstractGUI):
 	def _helpFileWidget(self, item: types.Item) -> None:
 		with dpg.group(horizontal=False):
 			self._helpText(item)
-			dpg.add_input_text(tag=item["dest"], default_value=(item["default"] or ""))
+			dpg.add_file_dialog(directory_selector=False, width=600, height=400)
 
 	def _helpDropdownWidget(self, item: types.Item) -> None:
 		with dpg.group(horizontal=False):
