@@ -169,5 +169,5 @@ def createFromParser(
 
 #### See also
 
-- [BuildSpec](./types.md#buildspec)
-- [FullBuildSpec](./types.md#fullbuildspec)
+- [BuildSpec](./models.md#buildspec)
+- [FullBuildSpec](./models.md#fullbuildspec)

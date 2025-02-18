@@ -6,14 +6,14 @@ import logging
 import sys
 from typing import Any
 
-from cli2gui import types
+from cli2gui import models
 from cli2gui.application.application2args import argFormat
 from cli2gui.gui import helpers
 from cli2gui.gui.dearpygui_wrapper import DearPyGuiWrapper
 from cli2gui.gui.pysimplegui_wrapper import PySimpleGUIWrapper
 
 
-def run(buildSpec: types.FullBuildSpec) -> Any:
+def run(buildSpec: models.FullBuildSpec) -> Any:
 	"""Establish the main entry point.
 
 	Args:

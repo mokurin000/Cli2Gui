@@ -1,3 +1,5 @@
+"""Wrapper class for PySimpleGUI."""
+
 from __future__ import annotations
 
 import io
@@ -8,15 +10,19 @@ from PIL import Image, ImageTk
 
 from cli2gui.gui import helpers
 from cli2gui.gui.abstract_gui import AbstractGUI
-from cli2gui.types import SEP, FullBuildSpec, Group, Item, ItemType
-
-# ruff: noqa: ANN401
+from cli2gui.models import SEP, FullBuildSpec, Group, Item, ItemType
 
 
 class PySimpleGUIWrapper(AbstractGUI):
 	"""Wrapper class for PySimpleGUI."""
 
 	def __init__(self, base24Theme: list[str], psg_lib: str) -> None:
+		"""PySimpleGUI wrapper class.
+
+		:param list[str] base24Theme: list representing a base24 theme. Containing 24 elements
+		(of hex strings like "#e7e7e9")
+		:param str psg_lib: string representing the pysimplegui lib to use
+		"""
 		super().__init__()
 
 		if psg_lib == "psg":
@@ -138,14 +144,14 @@ class PySimpleGUIWrapper(AbstractGUI):
 		additional_properties: dict | None = None,
 	) -> list[Any]:
 		"""Return a fileBrowser button and field."""
-		additional_properties = additional_properties or {}
+		prop = additional_properties or {}
 
 		height = self.sizes["input_size"][1]
 		width = self.sizes["input_size"][0]
 
 		key = f"{key}{SEP}{_type}"
 		if _type in [ItemType.FileWrite, ItemType.File]:
-			key += f";{additional_properties.get('file_mode')};{additional_properties.get('file_encoding')}"
+			key += f";{prop.get('file_mode')};{prop.get('file_encoding')}"
 
 		browser = self.sg.FileBrowse(
 			key="@@" + key,
@@ -394,15 +400,10 @@ class PySimpleGUIWrapper(AbstractGUI):
 	) -> list[list[Any]]:
 		"""Create the pysimplegui layout from the build spec.
 
-		Args:
-		----
-			buildSpec (FullBuildSpec): build spec containing widget
-			self (self): class to build self
+		:param FullBuildSpec buildSpec: build spec containing widget
+		:param str | list[str] menu: menu definition. containing menu keys
 
-
-		Returns:
-		-------
-			list[list[Any]]: list of self (layout list)
+		:return list[list[Any]]: list of self (layout list)
 
 		"""
 		argConstruct = []

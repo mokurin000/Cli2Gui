@@ -14,7 +14,7 @@
 
 ## _themeFromFile
 
-[Show source in helpers.py:17](../../../../cli2gui/gui/helpers.py#L17)
+[Show source in helpers.py:20](../../../../cli2gui/gui/helpers.py#L20)
 
 Set the base24 theme from a base24 scheme.yaml to the application.
 
@@ -38,7 +38,7 @@ def _themeFromFile(themeFile: str) -> list[str]: ...
 
 ## get_base24_theme
 
-[Show source in helpers.py:33](../../../../cli2gui/gui/helpers.py#L33)
+[Show source in helpers.py:36](../../../../cli2gui/gui/helpers.py#L36)
 
 Set the base24 theme to the application.
 
@@ -60,7 +60,7 @@ def get_base24_theme(
 
 ## isDarkMode
 
-[Show source in helpers.py:9](../../../../cli2gui/gui/helpers.py#L9)
+[Show source in helpers.py:12](../../../../cli2gui/gui/helpers.py#L12)
 
 Monkeypatch for getostheme.isDarkMode.
 
@@ -74,7 +74,7 @@ def isDarkMode() -> bool: ...
 
 ## read_file
 
-[Show source in helpers.py:130](../../../../cli2gui/gui/helpers.py#L130)
+[Show source in helpers.py:133](../../../../cli2gui/gui/helpers.py#L133)
 
 Get the contents of a file path, attempt to parse with catpandoc..pandoc2plain.
 
@@ -97,7 +97,7 @@ def read_file(file_path: str, maxLines: int = 200) -> str: ...
 
 ## stringSentencecase
 
-[Show source in helpers.py:122](../../../../cli2gui/gui/helpers.py#L122)
+[Show source in helpers.py:125](../../../../cli2gui/gui/helpers.py#L125)
 
 Convert a string to sentence case.
 
@@ -111,7 +111,7 @@ def stringSentencecase(string: str) -> str: ...
 
 ## stringTitlecase
 
-[Show source in helpers.py:108](../../../../cli2gui/gui/helpers.py#L108)
+[Show source in helpers.py:111](../../../../cli2gui/gui/helpers.py#L111)
 
 Convert a string to title case.
 

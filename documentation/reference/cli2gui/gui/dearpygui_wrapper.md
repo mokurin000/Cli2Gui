@@ -15,7 +15,7 @@
 
 ## DearPyGuiWrapper
 
-[Show source in dearpygui_wrapper.py:24](../../../../cli2gui/gui/dearpygui_wrapper.py#L24)
+[Show source in dearpygui_wrapper.py:26](../../../../cli2gui/gui/dearpygui_wrapper.py#L26)
 
 Wrapper class for Dear PyGui.
 
@@ -32,7 +32,7 @@ class DearPyGuiWrapper(AbstractGUI):
 
 ### DearPyGuiWrapper()._helpFileWidget
 
-[Show source in dearpygui_wrapper.py:73](../../../../cli2gui/gui/dearpygui_wrapper.py#L73)
+[Show source in dearpygui_wrapper.py:80](../../../../cli2gui/gui/dearpygui_wrapper.py#L80)
 
 Create a UI element with an input text field and a file picker.
 
@@ -44,11 +44,11 @@ def _helpFileWidget(self, item: Item) -> None: ...
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 ### DearPyGuiWrapper().addItemsAndGroups
 
-[Show source in dearpygui_wrapper.py:140](../../../../cli2gui/gui/dearpygui_wrapper.py#L140)
+[Show source in dearpygui_wrapper.py:147](../../../../cli2gui/gui/dearpygui_wrapper.py#L147)
 
 Items and groups and return a list of these so we can get values from the dpg widgets.
 
@@ -69,12 +69,12 @@ def addItemsAndGroups(self, section: Group) -> list[Item]: ...
 
 #### See also
 
-- [Group](../types.md#group)
-- [Item](../types.md#item)
+- [Group](../models.md#group)
+- [Item](../models.md#item)
 
 ### DearPyGuiWrapper().addWidgetFromItem
 
-[Show source in dearpygui_wrapper.py:118](../../../../cli2gui/gui/dearpygui_wrapper.py#L118)
+[Show source in dearpygui_wrapper.py:125](../../../../cli2gui/gui/dearpygui_wrapper.py#L125)
 
 Select a widget based on the item type.
 
@@ -90,11 +90,11 @@ def addWidgetFromItem(self, item: Item) -> None: ...
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 ### DearPyGuiWrapper().main
 
-[Show source in dearpygui_wrapper.py:184](../../../../cli2gui/gui/dearpygui_wrapper.py#L184)
+[Show source in dearpygui_wrapper.py:191](../../../../cli2gui/gui/dearpygui_wrapper.py#L191)
 
 Run the gui (dpg) with a given buildSpec, quit_callback, and run_callback.
 
@@ -122,11 +122,11 @@ def main(
 
 #### See also
 
-- [FullBuildSpec](../types.md#fullbuildspec)
+- [FullBuildSpec](../models.md#fullbuildspec)
 
 ### DearPyGuiWrapper().open_menu_item
 
-[Show source in dearpygui_wrapper.py:170](../../../../cli2gui/gui/dearpygui_wrapper.py#L170)
+[Show source in dearpygui_wrapper.py:177](../../../../cli2gui/gui/dearpygui_wrapper.py#L177)
 
 Open a menu item.
 
@@ -145,7 +145,7 @@ def open_menu_item(self, sender: str, _app_data: None) -> None: ...
 
 ## hex_to_rgb
 
-[Show source in dearpygui_wrapper.py:15](../../../../cli2gui/gui/dearpygui_wrapper.py#L15)
+[Show source in dearpygui_wrapper.py:17](../../../../cli2gui/gui/dearpygui_wrapper.py#L17)
 
 Convert a color hex code to a tuple of integers (r, g, b).
 

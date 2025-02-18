@@ -7,7 +7,7 @@ import optparse
 from pathlib import Path
 from typing import Any
 
-from cli2gui.types import SEP, ParserType
+from cli2gui.models import SEP, ParserType
 
 
 def processValue(key: str, value: str) -> tuple[str, Any]:
@@ -44,8 +44,8 @@ def processValue(key: str, value: str) -> tuple[str, Any]:
 def argparseFormat(values: dict[str, Any]) -> argparse.Namespace:
 	"""Format args for argparse."""
 	args = {}
-	for key in values:
-		cleankey, value = processValue(key, values[key])
+	for key, _value in values.items():
+		cleankey, value = processValue(key, _value)
 		args[cleankey] = value
 	return argparse.Namespace(**args)
 
@@ -53,15 +53,15 @@ def argparseFormat(values: dict[str, Any]) -> argparse.Namespace:
 def optparseFormat(values: dict[str, Any]) -> tuple[optparse.Values, list[str]]:
 	"""Format args for optparse."""
 	args = {}
-	for key in values:
-		cleankey, value = processValue(key, values[key])
+	for key, _value in values.items():
+		cleankey, value = processValue(key, _value)
 		args[cleankey] = value
 	return (optparse.Values(args), [])
 
 
 def getoptFormat(values: dict[str, Any]) -> tuple[list[Any], list[Any]]:
 	"""Format args for getopt."""
-	return ([processValue(key, values[key]) for key in values if values[key]], [])
+	return ([processValue(key, _value) for key, _value in values.items() if _value], [])
 
 
 def docoptFormat(values: dict[str, Any]) -> dict[str, Any]:
@@ -69,8 +69,8 @@ def docoptFormat(values: dict[str, Any]) -> dict[str, Any]:
 	import docopt
 
 	args = {}
-	for key in values:
-		cleankey, value = processValue(key, values[key])
+	for key, _value in values.items():
+		cleankey, value = processValue(key, _value)
 		args[cleankey] = value
 	return docopt.Dict(args)
 
@@ -78,10 +78,10 @@ def docoptFormat(values: dict[str, Any]) -> dict[str, Any]:
 def clickFormat(values: dict[str, Any]) -> list[Any]:
 	"""Format args for click."""
 	args = []
-	for key in values:
-		val = str(values[key])
+	for key, _value in values.items():
+		val = str(_value)
 		if not callable(key) and len(val) > 0:
-			cleankey, value = processValue(key, values[key])
+			cleankey, value = processValue(key, _value)
 			args.extend([cleankey, value])
 	return args
 

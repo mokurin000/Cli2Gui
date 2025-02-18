@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Generator
 
-from cli2gui.types import Group, Item, ItemType, ParserRep
+from cli2gui.models import Group, Item, ItemType, ParserRep
 
 # ruff: noqa: SLF001
 

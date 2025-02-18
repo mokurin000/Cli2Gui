@@ -5,7 +5,7 @@ from __future__ import annotations
 import contextlib
 from typing import Any, Generator
 
-from cli2gui.types import Group, Item, ItemType, ParserRep
+from cli2gui.models import Group, Item, ItemType, ParserRep
 
 
 def extract(parser: Any) -> list[Group]:

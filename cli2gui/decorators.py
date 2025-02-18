@@ -13,6 +13,7 @@ from shlex import quote
 from typing import Any, Iterable
 
 from cli2gui.application import application
+from cli2gui.models import BuildSpec, FullBuildSpec, GUIType, ParserType
 from cli2gui.tojson import (
 	argparse2json,
 	click2json,
@@ -20,7 +21,6 @@ from cli2gui.tojson import (
 	getopt2json,
 	optparse2json,
 )
-from cli2gui.types import BuildSpec, FullBuildSpec, GUIType, ParserType
 
 DO_COMMAND = "--cli2gui"
 DO_NOT_COMMAND = "--disable-cli2gui"

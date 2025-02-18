@@ -25,8 +25,8 @@ def actionToJson(action: optparse.Option, widget: ItemType) -> Item: ...
 
 #### See also
 
-- [ItemType](../types.md#itemtype)
-- [Item](../types.md#item)
+- [ItemType](../models.md#itemtype)
+- [Item](../models.md#item)
 
 
 
@@ -44,7 +44,7 @@ def categorize(actions: list[optparse.Option]) -> Generator[Item, None, None]: .
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 
 
@@ -72,7 +72,7 @@ def convert(parser: optparse.OptionParser) -> ParserRep: ...
 
 #### See also
 
-- [ParserRep](../types.md#parserrep)
+- [ParserRep](../models.md#parserrep)
 
 
 
@@ -90,7 +90,7 @@ def extractGroups(parser: optparse.OptionParser) -> Group: ...
 
 #### See also
 
-- [Group](../types.md#group)
+- [Group](../models.md#group)
 
 
 
@@ -108,4 +108,4 @@ def extractOptions(optionGroup: optparse.OptionGroup) -> Group: ...
 
 #### See also
 
-- [Group](../types.md#group)
+- [Group](../models.md#group)

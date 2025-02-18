@@ -1,3 +1,5 @@
+"""Wrapper class for Dear PyGui."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -7,7 +9,7 @@ import dearpygui.dearpygui as dpg
 
 from cli2gui.gui import helpers
 from cli2gui.gui.abstract_gui import AbstractGUI
-from cli2gui.types import SEP, FullBuildSpec, Group, Item, ItemType
+from cli2gui.models import SEP, FullBuildSpec, Group, Item, ItemType
 
 THISDIR = Path(__file__).resolve().parent
 
@@ -25,6 +27,11 @@ class DearPyGuiWrapper(AbstractGUI):
 	"""Wrapper class for Dear PyGui."""
 
 	def __init__(self, base24Theme: list[str]) -> None:
+		"""Dearpygui wrapper class.
+
+		:param list[str] base24Theme: list representing a base24 theme. Containing 24 elements
+		(of hex strings like "#e7e7e9")
+		"""
 		self.base24Theme = base24Theme
 		super().__init__()
 

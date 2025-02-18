@@ -26,8 +26,8 @@ def actionToJson(action: str, widget: ItemType, short: bool = True) -> Item: ...
 
 #### See also
 
-- [ItemType](../types.md#itemtype)
-- [Item](../types.md#item)
+- [ItemType](../models.md#itemtype)
+- [Item](../models.md#item)
 
 
 
@@ -45,7 +45,7 @@ def catLong(actions: list[str]) -> Generator[Item, None, None]: ...
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 
 
@@ -63,7 +63,7 @@ def catShort(actions: list[str]) -> Generator[Item, None, None]: ...
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 
 
@@ -91,7 +91,7 @@ def convert(parser: tuple[list[str], list[str]]) -> ParserRep: ...
 
 #### See also
 
-- [ParserRep](../types.md#parserrep)
+- [ParserRep](../models.md#parserrep)
 
 
 
@@ -113,5 +113,5 @@ def process(
 
 #### See also
 
-- [Group](../types.md#group)
-- [Item](../types.md#item)
+- [Group](../models.md#group)
+- [Item](../models.md#item)

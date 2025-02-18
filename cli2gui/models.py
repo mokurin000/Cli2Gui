@@ -98,13 +98,6 @@ class FullBuildSpec:
 class ParserType(str, Enum):
 	"""Supported parser types.
 
-	OPTPARSE = "optparse"
-	ARGPARSE = "argparse"
-	DEPHELL_ARGPARSE = "dephell_argparse"
-	DOCOPT = "docopt"
-	GETOPT = "getopt"
-	CLICK = "click"
-	CUSTOM = "input()"  # this seems like a pretty poor pattern to use
 	"""
 
 	OPTPARSE = "optparse"
@@ -120,13 +113,12 @@ class ParserType(str, Enum):
 class GUIType(str, Enum):
 	"""Supported gui types.
 
-	DEFAULT = "pysimplegui"
-	WEB = "pysimpleguiweb"
-	QT = "pysimpleguiqt"
-	FSG = "freesimplegui"
 	"""
 
-	DEFAULT = "pysimplegui"
+	PSG = "pysimplegui"
 	WEB = "pysimpleguiweb"
 	QT = "pysimpleguiqt"
 	FSG = "freesimplegui"
+	FSGWEB = "freesimpleguiweb"
+	FSGQT = "freesimpleguiqt"
+	DPG = "dearpygui"

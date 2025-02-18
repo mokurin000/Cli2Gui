@@ -20,7 +20,7 @@ from pathlib import Path
 from sys import argv
 from typing import Any, Generator, TypedDict
 
-from cli2gui.types import Group, Item, ItemType, ParserRep
+from cli2gui.models import Group, Item, ItemType, ParserRep
 
 
 class ArgparseGroup(TypedDict):
@@ -109,6 +109,7 @@ def extractRawGroups(actionGroup: argparse._ArgumentGroup) -> ArgparseGroup:
 
 
 def fileActionToJson(action: argparse.Action, widget: ItemType) -> Item:
+	"""Convert an action of type Path or argparse.FileType to an Item."""
 	item = actionToJson(action=action, widget=widget)
 	if isinstance(action.type, argparse.FileType):
 		item.additional_properties = {
@@ -166,12 +167,12 @@ def categorizeItems(
 
 		elif isinstance(action.type, argparse.FileType):
 			yield fileActionToJson(action, ItemType.File)
-		elif action.type == Path:
+		elif action.type is Path:
 			yield actionToJson(action, ItemType.Path)
 
-		elif action.type == int:
+		elif action.type is int:
 			yield actionToJson(action, ItemType.Int)
-		elif action.type == float:
+		elif action.type is float:
 			yield actionToJson(action, ItemType.Float)
 		else:
 			yield actionToJson(action, ItemType.Text)

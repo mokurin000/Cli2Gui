@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Iterator
 
-from cli2gui.types import Group, Item, ItemType, ParserRep
+from cli2gui.models import Group, Item, ItemType, ParserRep
 
 
 def actionToJson(action: tuple[str, str, int, Any, str], widget: ItemType, *, isPos: bool) -> Item:
@@ -94,8 +94,8 @@ def parse(optionDescription: str) -> tuple[str, str, int, Any, str]:
 def parseOpt(doc: Any) -> list[tuple[str, str, int, Any, str]]:
 	"""Parse an option help text, adapted from docopt."""
 	defaults = []
-	for section in parseSection("options:", doc):
-		_, _, section = section.partition(":")
+	for _section in parseSection("options:", doc):
+		_, _, section = _section.partition(":")
 		split = re.split(r"\n[ \t]*(-\S+?)", "\n" + section)[1:]
 		split = [s1 + s2 for s1, s2 in zip(split[::2], split[1::2])]
 		options = [parse(s) for s in split if s.startswith("-")]
@@ -106,8 +106,8 @@ def parseOpt(doc: Any) -> list[tuple[str, str, int, Any, str]]:
 def parsePos(doc: str) -> list[tuple[str, str]]:
 	"""Parse positional arguments from docstring."""
 	defaults = []
-	for section in parseSection("arguments:", doc):
-		_, _, section = section.partition(":")
+	for _section in parseSection("arguments:", doc):
+		_, _, section = _section.partition(":")
 		defaults.append(
 			tuple(col.strip() for col in section.strip().partition("  ") if len(col.strip()) > 0)
 		)

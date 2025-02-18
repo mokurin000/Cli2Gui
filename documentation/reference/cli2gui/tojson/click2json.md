@@ -24,8 +24,8 @@ def actionToJson(action: Any, widget: ItemType, other: dict | None = None) -> It
 
 #### See also
 
-- [ItemType](../types.md#itemtype)
-- [Item](../types.md#item)
+- [ItemType](../models.md#itemtype)
+- [Item](../models.md#item)
 
 
 
@@ -43,7 +43,7 @@ def categorize(actions: list[Any]) -> Generator[Item, None, None]: ...
 
 #### See also
 
-- [Item](../types.md#item)
+- [Item](../models.md#item)
 
 
 
@@ -71,7 +71,7 @@ def convert(parser: Any) -> ParserRep: ...
 
 #### See also
 
-- [ParserRep](../types.md#parserrep)
+- [ParserRep](../models.md#parserrep)
 
 
 
@@ -89,4 +89,4 @@ def extract(parser: Any) -> list[Group]: ...
 
 #### See also
 
-- [Group](../types.md#group)
+- [Group](../models.md#group)

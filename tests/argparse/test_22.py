@@ -36,16 +36,16 @@ def main() -> None:
 	blocking_run(args)
 
 
-def blocking_run(args) -> None:
+def blocking_run(args: argparse.Namespace) -> None:
 	asyncio.run(run(args))
 
 
-async def run(args) -> None:
+async def run(args: argparse.Namespace) -> None:
 	print(args)
 	print(args.timeout)
 
 
-def wrapper(args) -> None:
+def wrapper(args: argparse.Namespace) -> None:
 	global THREAD
 
 	if THREAD is not None and THREAD.is_alive():

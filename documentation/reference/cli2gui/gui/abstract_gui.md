@@ -10,7 +10,7 @@
 
 ## AbstractGUI
 
-[Show source in abstract_gui.py:8](../../../../cli2gui/gui/abstract_gui.py#L8)
+[Show source in abstract_gui.py:11](../../../../cli2gui/gui/abstract_gui.py#L11)
 
 Abstract base class for GUI wrappers.
 
@@ -24,7 +24,7 @@ class AbstractGUI(ABC):
 
 ### AbstractGUI().main
 
-[Show source in abstract_gui.py:15](../../../../cli2gui/gui/abstract_gui.py#L15)
+[Show source in abstract_gui.py:18](../../../../cli2gui/gui/abstract_gui.py#L18)
 
 Abstract method for the main function.
 
@@ -33,6 +33,9 @@ Abstract method for the main function.
 ```python
 @abstractmethod
 def main(
-    self, buildSpec: types.FullBuildSpec, menu: list[str], quit_callback, run_callback
+    self,
+    buildSpec: models.FullBuildSpec,
+    quit_callback: Callable[[], None],
+    run_callback: Callable[[dict[str, Any]], None],
 ) -> None: ...
 ```

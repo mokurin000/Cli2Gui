@@ -1,3 +1,6 @@
+"""Basic helper package containing commonly used functions, such as isDarkMode,
+get_base24_theme etc."""
+
 from __future__ import annotations
 
 from pathlib import Path

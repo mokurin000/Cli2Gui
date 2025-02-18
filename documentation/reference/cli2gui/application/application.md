@@ -22,5 +22,5 @@ Establish the main entry point.
 #### Signature
 
 ```python
-def run(buildSpec: types.FullBuildSpec) -> Any: ...
+def run(buildSpec: models.FullBuildSpec) -> Any: ...
 ```
