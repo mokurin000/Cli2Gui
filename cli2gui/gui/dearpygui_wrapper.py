@@ -71,9 +71,44 @@ class DearPyGuiWrapper(AbstractGUI):
 			)
 
 	def _helpFileWidget(self, item: Item) -> None:
+		"""Create a UI element with an input text field and a file picker."""
+
+		def file_picker_callback(_sender: str, app_data: dict[str, Any]) -> None:
+			"""Update the input text field with the selected file path."""
+
+			file_path = ""
+			# User may have selected and edited, or just written a name
+			user_input_path = Path(app_data.get("file_path_name", ""))
+
+			# Get the selection if possible
+			selected_path = Path(next(iter(app_data.get("selections", {}).values()), ""))
+
+			if user_input_path.stem == selected_path.stem:
+				file_path = selected_path
+			# User may have selected and edited, or just written a name
+			else:
+				file_path = user_input_path.stem + Path(item.default or "").suffix
+			dpg.set_value(item.dest, str(file_path))
+
 		with dpg.group(horizontal=False):
 			self._helpText(item)
+
 			dpg.add_input_text(tag=item.dest, default_value=(item.default or ""))
+
+			dpg.add_button(
+				label="Browse", callback=lambda: dpg.show_item(f"{item.dest}_file_dialog")
+			)
+
+			with dpg.file_dialog(
+				directory_selector=False,
+				show=False,
+				callback=file_picker_callback,
+				id=f"{item.dest}_file_dialog",
+				width=650,
+				height=400,
+				file_count=1,
+			):
+				dpg.add_file_extension(".*", color=hex_to_rgb(self.base24Theme[13]))
 
 	def _helpDropdownWidget(self, item: Item) -> None:
 		with dpg.group(horizontal=False):
@@ -305,8 +340,17 @@ class DearPyGuiWrapper(AbstractGUI):
 
 		# Define "Run" and "Exit" buttons
 		def _run_callback() -> None:
-			_items = [item for item in items if item.dest]
-			myd = {f"{item.dest}{SEP}{item.type}": dpg.get_value(item.dest) for item in _items}
+			_items: list[Item] = [item for item in items if item.dest]
+			myd = {}
+			for item in _items:
+				value = dpg.get_value(item.dest)
+				key = f"{item.dest}{SEP}{item.type}"
+				if item.type in [ItemType.File, ItemType.FileWrite]:
+					prop = item.additional_properties
+					key += f";{prop.get('file_mode')};{prop.get('file_encoding')}"
+
+				myd[key] = value
+
 			run_callback(myd)
 
 		def close_dpg() -> None:

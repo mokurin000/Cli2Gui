@@ -19,12 +19,16 @@ class PySimpleGUIWrapper(AbstractGUI):
 	def __init__(self, base24Theme: list[str], psg_lib: str) -> None:
 		super().__init__()
 
-		if psg_lib == "pysimplegui":
+		if psg_lib == "psg":
 			import PySimpleGUI as gui_lib
-		elif psg_lib == "pysimpleguiqt":
+		elif psg_lib == "psgqt":
 			import PySimpleGUIQt as gui_lib
-		elif psg_lib == "pysimpleguiweb":
+		elif psg_lib == "psgweb":
 			import PySimpleGUIWeb as gui_lib
+		elif psg_lib == "fsgqt":
+			import FreeSimpleGUIQt as gui_lib
+		elif psg_lib == "fsgweb":
+			import FreeSimpleGUIWeb as gui_lib
 		else:
 			import FreeSimpleGUI as gui_lib
 
@@ -40,7 +44,7 @@ class PySimpleGUIWrapper(AbstractGUI):
 			"text_size": 11,
 		}
 
-		if psg_lib not in ["pysimplegui", "freesimplegui"]:
+		if psg_lib not in ["psg", "fsg"]:
 			self.sizes = {
 				"title_size": 18,
 				"label_size": (600, None),
@@ -316,10 +320,10 @@ class PySimpleGUIWrapper(AbstractGUI):
 			Window: A PySimpleGui Window
 
 		"""
-		maxLines = 30 if self.psg_lib == "pysimpleguiqt" else 200
+		maxLines = 30 if self.psg_lib == "psgqt" else 200
 		popupText = helpers.read_file(buildSpec.menu[values[0]], maxLines)
 
-		if self.psg_lib == "pysimplegui":
+		if self.psg_lib in ["psg", "fsg"]:
 			popupLayout = [
 				self._title(values[0]),
 				[
@@ -425,8 +429,8 @@ class PySimpleGUIWrapper(AbstractGUI):
 			]
 		)
 		if len(argConstruct) > buildSpec.max_args_shown and self.psg_lib in (
-			"pysimplegui",
-			"freesimplegui",
+			"psg",
+			"fsg",
 		):
 			layout.append(
 				[

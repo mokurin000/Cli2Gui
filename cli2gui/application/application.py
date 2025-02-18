@@ -26,11 +26,15 @@ def run(buildSpec: types.FullBuildSpec) -> Any:
 	# Set the theme
 	theme = helpers.get_base24_theme(buildSpec.theme, buildSpec.darkTheme)
 
+	buildSpec.gui = buildSpec.gui.replace("pysimplegui", "psg").replace("freesimplegui", "fsg")
+
 	if buildSpec.gui in [
-		"pysimplegui",
-		"pysimpleguiqt",
-		"pysimpleguiweb",
-		"freesimplegui",
+		"psg",
+		"psgqt",
+		"psgweb",
+		"fsg",
+		# "fsgqt",  # cannot test on windows
+		# "fsgweb", # bug in remi prevents this from working
 	]:
 		gui_wrapper = PySimpleGUIWrapper
 	else:

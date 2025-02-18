@@ -48,7 +48,7 @@ class PySimpleGUIWrapper(AbstractGUI):
 
 ### PySimpleGUIWrapper()._button
 
-[Show source in pysimplegui_wrapper.py:99](../../../../cli2gui/gui/pysimplegui_wrapper.py#L99)
+[Show source in pysimplegui_wrapper.py:103](../../../../cli2gui/gui/pysimplegui_wrapper.py#L103)
 
 Return a button.
 
@@ -60,7 +60,7 @@ def _button(self, text: str) -> Any: ...
 
 ### PySimpleGUIWrapper()._check
 
-[Show source in pysimplegui_wrapper.py:89](../../../../cli2gui/gui/pysimplegui_wrapper.py#L89)
+[Show source in pysimplegui_wrapper.py:93](../../../../cli2gui/gui/pysimplegui_wrapper.py#L93)
 
 Return a checkbox.
 
@@ -72,7 +72,7 @@ def _check(self, key: str, default: str | None = None) -> Any: ...
 
 ### PySimpleGUIWrapper()._dropdown
 
-[Show source in pysimplegui_wrapper.py:120](../../../../cli2gui/gui/pysimplegui_wrapper.py#L120)
+[Show source in pysimplegui_wrapper.py:124](../../../../cli2gui/gui/pysimplegui_wrapper.py#L124)
 
 Return a dropdown.
 
@@ -84,7 +84,7 @@ def _dropdown(self, key: str, argItems: list[str]) -> Any: ...
 
 ### PySimpleGUIWrapper()._fileBrowser
 
-[Show source in pysimplegui_wrapper.py:129](../../../../cli2gui/gui/pysimplegui_wrapper.py#L129)
+[Show source in pysimplegui_wrapper.py:133](../../../../cli2gui/gui/pysimplegui_wrapper.py#L133)
 
 Return a fileBrowser button and field.
 
@@ -106,7 +106,7 @@ def _fileBrowser(
 
 ### PySimpleGUIWrapper()._helpArgHelp
 
-[Show source in pysimplegui_wrapper.py:178](../../../../cli2gui/gui/pysimplegui_wrapper.py#L178)
+[Show source in pysimplegui_wrapper.py:182](../../../../cli2gui/gui/pysimplegui_wrapper.py#L182)
 
 Return a label for the arg help text.
 
@@ -118,7 +118,7 @@ def _helpArgHelp(self, helpText: str) -> Any: ...
 
 ### PySimpleGUIWrapper()._helpArgName
 
-[Show source in pysimplegui_wrapper.py:174](../../../../cli2gui/gui/pysimplegui_wrapper.py#L174)
+[Show source in pysimplegui_wrapper.py:178](../../../../cli2gui/gui/pysimplegui_wrapper.py#L178)
 
 Return a label for the arg name.
 
@@ -130,7 +130,7 @@ def _helpArgName(self, displayName: str, commands: list[str]) -> Any: ...
 
 ### PySimpleGUIWrapper()._helpArgNameAndHelp
 
-[Show source in pysimplegui_wrapper.py:182](../../../../cli2gui/gui/pysimplegui_wrapper.py#L182)
+[Show source in pysimplegui_wrapper.py:186](../../../../cli2gui/gui/pysimplegui_wrapper.py#L186)
 
 Return a column containing the argument name and help text.
 
@@ -144,7 +144,7 @@ def _helpArgNameAndHelp(
 
 ### PySimpleGUIWrapper()._helpCounterWidget
 
-[Show source in pysimplegui_wrapper.py:233](../../../../cli2gui/gui/pysimplegui_wrapper.py#L233)
+[Show source in pysimplegui_wrapper.py:237](../../../../cli2gui/gui/pysimplegui_wrapper.py#L237)
 
 Return a set of self that make up an arg with text.
 
@@ -160,7 +160,7 @@ def _helpCounterWidget(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper()._helpDropdownWidget
 
-[Show source in pysimplegui_wrapper.py:258](../../../../cli2gui/gui/pysimplegui_wrapper.py#L258)
+[Show source in pysimplegui_wrapper.py:262](../../../../cli2gui/gui/pysimplegui_wrapper.py#L262)
 
 Return a set of self that make up an arg with a choice.
 
@@ -176,7 +176,7 @@ def _helpDropdownWidget(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper()._helpFileWidget
 
-[Show source in pysimplegui_wrapper.py:245](../../../../cli2gui/gui/pysimplegui_wrapper.py#L245)
+[Show source in pysimplegui_wrapper.py:249](../../../../cli2gui/gui/pysimplegui_wrapper.py#L249)
 
 Return a set of self that make up an arg with a file.
 
@@ -192,7 +192,7 @@ def _helpFileWidget(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper()._helpFlagWidget
 
-[Show source in pysimplegui_wrapper.py:208](../../../../cli2gui/gui/pysimplegui_wrapper.py#L208)
+[Show source in pysimplegui_wrapper.py:212](../../../../cli2gui/gui/pysimplegui_wrapper.py#L212)
 
 Return a set of self that make up an arg with true/ false.
 
@@ -208,7 +208,7 @@ def _helpFlagWidget(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper()._helpTextWidget
 
-[Show source in pysimplegui_wrapper.py:220](../../../../cli2gui/gui/pysimplegui_wrapper.py#L220)
+[Show source in pysimplegui_wrapper.py:224](../../../../cli2gui/gui/pysimplegui_wrapper.py#L224)
 
 Return a set of self that make up an arg with text.
 
@@ -224,7 +224,7 @@ def _helpTextWidget(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper()._inputText
 
-[Show source in pysimplegui_wrapper.py:68](../../../../cli2gui/gui/pysimplegui_wrapper.py#L68)
+[Show source in pysimplegui_wrapper.py:72](../../../../cli2gui/gui/pysimplegui_wrapper.py#L72)
 
 Return an input text field.
 
@@ -236,7 +236,7 @@ def _inputText(self, key: str, default: str | None = None) -> Any: ...
 
 ### PySimpleGUIWrapper()._label
 
-[Show source in pysimplegui_wrapper.py:108](../../../../cli2gui/gui/pysimplegui_wrapper.py#L108)
+[Show source in pysimplegui_wrapper.py:112](../../../../cli2gui/gui/pysimplegui_wrapper.py#L112)
 
 Return a label.
 
@@ -248,7 +248,7 @@ def _label(self, text: str, font: int = 11) -> Any: ...
 
 ### PySimpleGUIWrapper()._spin
 
-[Show source in pysimplegui_wrapper.py:78](../../../../cli2gui/gui/pysimplegui_wrapper.py#L78)
+[Show source in pysimplegui_wrapper.py:82](../../../../cli2gui/gui/pysimplegui_wrapper.py#L82)
 
 Return an input text field.
 
@@ -260,7 +260,7 @@ def _spin(self, key: str, default: str | None = None) -> Any: ...
 
 ### PySimpleGUIWrapper()._title
 
-[Show source in pysimplegui_wrapper.py:189](../../../../cli2gui/gui/pysimplegui_wrapper.py#L189)
+[Show source in pysimplegui_wrapper.py:193](../../../../cli2gui/gui/pysimplegui_wrapper.py#L193)
 
 Return a set of self that make up the application header.
 
@@ -272,7 +272,7 @@ def _title(self, text: str, image: str = "") -> list[Any]: ...
 
 ### PySimpleGUIWrapper().addItemsAndGroups
 
-[Show source in pysimplegui_wrapper.py:361](../../../../cli2gui/gui/pysimplegui_wrapper.py#L361)
+[Show source in pysimplegui_wrapper.py:365](../../../../cli2gui/gui/pysimplegui_wrapper.py#L365)
 
 Items and groups and return a list of psg Elements.
 
@@ -297,7 +297,7 @@ def addItemsAndGroups(self, section: Group) -> list[list[Any]]: ...
 
 ### PySimpleGUIWrapper().addWidgetFromItem
 
-[Show source in pysimplegui_wrapper.py:277](../../../../cli2gui/gui/pysimplegui_wrapper.py#L277)
+[Show source in pysimplegui_wrapper.py:281](../../../../cli2gui/gui/pysimplegui_wrapper.py#L281)
 
 Select a widget based on the item type.
 
@@ -317,7 +317,7 @@ def addWidgetFromItem(self, item: Item) -> list[Any]: ...
 
 ### PySimpleGUIWrapper().createLayout
 
-[Show source in pysimplegui_wrapper.py:386](../../../../cli2gui/gui/pysimplegui_wrapper.py#L386)
+[Show source in pysimplegui_wrapper.py:390](../../../../cli2gui/gui/pysimplegui_wrapper.py#L390)
 
 Create the pysimplegui layout from the build spec.
 
@@ -346,7 +346,7 @@ def createLayout(
 
 ### PySimpleGUIWrapper().generatePopup
 
-[Show source in pysimplegui_wrapper.py:301](../../../../cli2gui/gui/pysimplegui_wrapper.py#L301)
+[Show source in pysimplegui_wrapper.py:305](../../../../cli2gui/gui/pysimplegui_wrapper.py#L305)
 
 Create the popup window.
 
@@ -376,7 +376,7 @@ def generatePopup(
 
 ### PySimpleGUIWrapper().getImgData
 
-[Show source in pysimplegui_wrapper.py:503](../../../../cli2gui/gui/pysimplegui_wrapper.py#L503)
+[Show source in pysimplegui_wrapper.py:507](../../../../cli2gui/gui/pysimplegui_wrapper.py#L507)
 
 Generate image data using PIL.
 
@@ -388,7 +388,7 @@ def getImgData(self, imagePath: str, first: bool = False) -> bytes: ...
 
 ### PySimpleGUIWrapper().main
 
-[Show source in pysimplegui_wrapper.py:458](../../../../cli2gui/gui/pysimplegui_wrapper.py#L458)
+[Show source in pysimplegui_wrapper.py:462](../../../../cli2gui/gui/pysimplegui_wrapper.py#L462)
 
 Run the gui (psg) with a given buildSpec, quit_callback, and run_callback.
 

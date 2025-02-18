@@ -3,6 +3,11 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2025 - 2025/02/18
+
+- fpg write to file picker #24
+- dpg add file picker #16
+
 ## 2024.3 - 2024/10/05
 
 - Code improvements

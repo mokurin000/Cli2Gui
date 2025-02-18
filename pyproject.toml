@@ -31,6 +31,8 @@ dependencies = [
 [project.optional-dependencies]
 psg = ["pysimplegui<6,>=5.0.3"]
 fsg = ["freesimplegui<6,>=5.1.1"]
+# fsgweb = ["freesimpleguiWeb>=1.0.0"]
+# fsgqt = ["freesimpleguiQt>=1.0.0"]
 web = ["PySimpleGUIWeb<2,>=0.39.0"]
 qt = ["PySimpleGUIQt<6,>=5.0.0"]
 pandoc = ["catpandoc<2026,>=2024"]

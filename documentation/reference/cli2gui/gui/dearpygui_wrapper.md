@@ -6,6 +6,7 @@
 
 - [DearPyGuiWrapper](#dearpyguiwrapper)
   - [DearPyGuiWrapper](#dearpyguiwrapper-1)
+    - [DearPyGuiWrapper()._helpFileWidget](#dearpyguiwrapper()_helpfilewidget)
     - [DearPyGuiWrapper().addItemsAndGroups](#dearpyguiwrapper()additemsandgroups)
     - [DearPyGuiWrapper().addWidgetFromItem](#dearpyguiwrapper()addwidgetfromitem)
     - [DearPyGuiWrapper().main](#dearpyguiwrapper()main)
@@ -29,9 +30,25 @@ class DearPyGuiWrapper(AbstractGUI):
 
 - [AbstractGUI](./abstract_gui.md#abstractgui)
 
+### DearPyGuiWrapper()._helpFileWidget
+
+[Show source in dearpygui_wrapper.py:73](../../../../cli2gui/gui/dearpygui_wrapper.py#L73)
+
+Create a UI element with an input text field and a file picker.
+
+#### Signature
+
+```python
+def _helpFileWidget(self, item: Item) -> None: ...
+```
+
+#### See also
+
+- [Item](../types.md#item)
+
 ### DearPyGuiWrapper().addItemsAndGroups
 
-[Show source in dearpygui_wrapper.py:105](../../../../cli2gui/gui/dearpygui_wrapper.py#L105)
+[Show source in dearpygui_wrapper.py:140](../../../../cli2gui/gui/dearpygui_wrapper.py#L140)
 
 Items and groups and return a list of these so we can get values from the dpg widgets.
 
@@ -57,7 +74,7 @@ def addItemsAndGroups(self, section: Group) -> list[Item]: ...
 
 ### DearPyGuiWrapper().addWidgetFromItem
 
-[Show source in dearpygui_wrapper.py:83](../../../../cli2gui/gui/dearpygui_wrapper.py#L83)
+[Show source in dearpygui_wrapper.py:118](../../../../cli2gui/gui/dearpygui_wrapper.py#L118)
 
 Select a widget based on the item type.
 
@@ -77,7 +94,7 @@ def addWidgetFromItem(self, item: Item) -> None: ...
 
 ### DearPyGuiWrapper().main
 
-[Show source in dearpygui_wrapper.py:149](../../../../cli2gui/gui/dearpygui_wrapper.py#L149)
+[Show source in dearpygui_wrapper.py:184](../../../../cli2gui/gui/dearpygui_wrapper.py#L184)
 
 Run the gui (dpg) with a given buildSpec, quit_callback, and run_callback.
 
@@ -109,7 +126,7 @@ def main(
 
 ### DearPyGuiWrapper().open_menu_item
 
-[Show source in dearpygui_wrapper.py:135](../../../../cli2gui/gui/dearpygui_wrapper.py#L135)
+[Show source in dearpygui_wrapper.py:170](../../../../cli2gui/gui/dearpygui_wrapper.py#L170)
 
 Open a menu item.
 
