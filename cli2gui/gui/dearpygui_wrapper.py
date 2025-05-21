@@ -1,11 +1,13 @@
 """Wrapper class for Dear PyGui."""
 
-from __future__ import annotations
+from __future__ import annotations  # noqa: I001
 
 from pathlib import Path
 from typing import Any, Callable
+import contextlib
 
-import dearpygui.dearpygui as dpg
+with contextlib.suppress(ImportError):
+	import dearpygui.dearpygui as dpg
 
 from cli2gui.gui import helpers
 from cli2gui.gui.abstract_gui import AbstractGUI

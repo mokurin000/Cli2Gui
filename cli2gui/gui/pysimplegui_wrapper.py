@@ -6,8 +6,6 @@ import io
 import logging
 from typing import Any, Callable
 
-from PIL import Image, ImageTk
-
 from cli2gui.gui import helpers
 from cli2gui.gui.abstract_gui import AbstractGUI
 from cli2gui.models import SEP, FullBuildSpec, Group, Item, ItemType
@@ -507,6 +505,8 @@ class PySimpleGUIWrapper(AbstractGUI):
 
 	def getImgData(self, imagePath: str, *, first: bool = False) -> bytes:
 		"""Generate image data using PIL."""
+		from PIL import Image, ImageTk
+
 		img = Image.open(imagePath)
 		img.thumbnail((self.sizes["title_size"] * 3, self.sizes["title_size"] * 3))
 		if first:  # tkinter is inactive the first time
